@@ -10,6 +10,7 @@
 		<link href="<?php echo base_url(); ?>assets/css/style.css" rel="stylesheet" />
 		<link href="<?php echo base_url(); ?>assets/css/main-style.css" rel="stylesheet" />
 		<link href="<?php echo base_url(); ?>assets/css/morris-0.4.3.min.css" rel="stylesheet" />
+		<link href="<?php echo base_url(); ?>assets/css/jquery.dataTables.min.css" rel="stylesheet" />
 		
 		<script src="<?php echo base_url(); ?>assets/js/jquery-1.10.2.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
@@ -18,7 +19,7 @@
 		<script src="<?php echo base_url(); ?>assets/js/siminta.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/raphael-2.1.0.min.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/morris.js"></script>
-		<script src="<?php echo base_url(); ?>assets/js/dashboard-demo.js"></script>
+		<script src="<?php echo base_url(); ?>assets/js/jquery.dataTables.min.js"></script>
 	</head>
 	<body>
 		<div id="wrapper">
