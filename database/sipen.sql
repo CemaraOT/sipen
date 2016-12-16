@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 16, 2016 at 05:18 AM
+-- Generation Time: Dec 16, 2016 at 06:10 AM
 -- Server version: 10.0.17-MariaDB
 -- PHP Version: 5.6.14
 
@@ -81,7 +81,29 @@ CREATE TABLE `tbl_forum` (
 --
 
 INSERT INTO `tbl_forum` (`id_forum`, `id_kategori`, `judul`, `deskripsi`, `tgl_post`) VALUES
-(1, 2, 'BARU', 'BARU', '2016-12-16');
+(1, 2, 'BARU', 'BARU', '2016-12-16'),
+(3, 6, 'asd', 'asd', '2016-12-16');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_forum_komentar`
+--
+
+CREATE TABLE `tbl_forum_komentar` (
+  `id_forum_komentar` int(11) NOT NULL,
+  `id_forum` int(11) NOT NULL,
+  `id_member` int(11) NOT NULL,
+  `komentar` text NOT NULL,
+  `tgl_komentar` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_forum_komentar`
+--
+
+INSERT INTO `tbl_forum_komentar` (`id_forum_komentar`, `id_forum`, `id_member`, `komentar`, `tgl_komentar`) VALUES
+(1, 1, 1, 'Apaa?', '2016-12-06');
 
 -- --------------------------------------------------------
 
@@ -225,6 +247,14 @@ ALTER TABLE `tbl_forum`
   ADD KEY `id_kategori` (`id_kategori`);
 
 --
+-- Indexes for table `tbl_forum_komentar`
+--
+ALTER TABLE `tbl_forum_komentar`
+  ADD PRIMARY KEY (`id_forum_komentar`),
+  ADD KEY `id_forum` (`id_forum`),
+  ADD KEY `id_member` (`id_member`);
+
+--
 -- Indexes for table `tbl_kategori`
 --
 ALTER TABLE `tbl_kategori`
@@ -270,7 +300,12 @@ ALTER TABLE `tbl_berita`
 -- AUTO_INCREMENT for table `tbl_forum`
 --
 ALTER TABLE `tbl_forum`
-  MODIFY `id_forum` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_forum` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `tbl_forum_komentar`
+--
+ALTER TABLE `tbl_forum_komentar`
+  MODIFY `id_forum_komentar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tbl_kategori`
 --

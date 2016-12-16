@@ -30,7 +30,7 @@
 										<tr>
 											<td><?php echo $row->id_forum; ?></td>
 											<td><?php echo $row->nama_kategori; ?></td>
-											<td><?php echo $row->judul; ?></td>
+											<td><a href="<?php echo site_url(); ?>admin_forum/komentar/<?php echo $row->id_forum; ?>"><?php echo $row->judul; ?></a></td>
 											<td>
 												<div class="text-center">
 													<button type="button" class="btn btn-info btn-rounded" style="width:40px; height:40px;"
