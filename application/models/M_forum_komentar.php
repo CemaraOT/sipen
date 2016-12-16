@@ -58,7 +58,7 @@ class M_forum_komentar extends CI_Model {
 	public function tambah_forum_komentar() {
         $sql = "insert into tbl_forum_komentar (id_forum,id_member,komentar,tgl_komentar)
 					values
-					('".$this->get_id_forum()."','".$this->get_komentar()."','".$this->get_id_member()."','".$this->get_tgl_komentar()."')";
+					('".$this->get_id_forum()."','".$this->get_id_member()."','".$this->get_komentar()."','".$this->get_tgl_komentar()."')";
         return $this->db->query($sql);
     }
 	

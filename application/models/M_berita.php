@@ -49,6 +49,21 @@ class M_berita extends CI_Model {
         return $this->db->query($sql);
     }
 	
+	public function tampil_berita_desc_limit_3() {
+        $sql = "select * from tbl_berita
+				inner join tbl_kategori on tbl_kategori.id_kategori = tbl_berita.id_kategori
+				order by tbl_berita.id_berita desc limit 3";
+        return $this->db->query($sql);
+    }
+	
+	public function tampil_berita_group_by_id_kategori() {
+        $sql = "select * from tbl_berita
+				inner join tbl_kategori on tbl_kategori.id_kategori = tbl_berita.id_kategori
+				group by tbl_berita.id_kategori
+				order by tbl_berita.id_berita desc";
+        return $this->db->query($sql);
+    }
+	
 	public function tampil_berita_desc_limit_1() {
         $sql = "select * from tbl_berita order by id_berita desc limit 1";
         return $this->db->query($sql);
@@ -58,6 +73,12 @@ class M_berita extends CI_Model {
         $sql = "select * from tbl_berita
 				inner join tbl_kategori on tbl_kategori.id_kategori = tbl_berita.id_kategori
 				where tbl_berita.id_berita = '".$this->get_id_berita()."'";
+        return $this->db->query($sql);
+    }
+	public function tampil_berita_by_id_kategori() {
+        $sql = "select * from tbl_berita
+				inner join tbl_kategori on tbl_kategori.id_kategori = tbl_berita.id_kategori
+				where tbl_berita.id_kategori = '".$this->get_id_kategori()."'";
         return $this->db->query($sql);
     }
 	

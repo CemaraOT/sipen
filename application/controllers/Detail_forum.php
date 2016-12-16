@@ -1,0 +1,22 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Detail_forum extends CI_Controller {
+
+	public function __construct() {
+        parent::__construct();
+		$this->load->model('m_berita');
+		$this->load->model('m_tips');
+		$this->load->model('m_peta');
+		$this->load->model('m_member');
+		$this->load->model('m_kategori');
+		$this->load->model('m_forum');
+		$this->load->model('m_forum_komentar');
+    }
+	
+	public function index()
+	{
+		$this->load->view('header');
+		$this->load->view('detail_forum');
+	}
+}

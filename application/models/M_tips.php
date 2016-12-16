@@ -49,8 +49,23 @@ class M_tips extends CI_Model {
         return $this->db->query($sql);
     }
 	
+	public function tampil_tips_desc_limit_3() {
+        $sql = "select * from tbl_tips
+				inner join tbl_kategori on tbl_kategori.id_kategori = tbl_tips.id_kategori
+				order by tbl_tips.id_tips desc limit 3";
+        return $this->db->query($sql);
+    }
+	
 	public function tampil_tips_desc_limit_1() {
         $sql = "select * from tbl_tips order by id_tips desc limit 1";
+        return $this->db->query($sql);
+    }
+	
+	public function tampil_tips_group_by_id_kategori() {
+        $sql = "select * from tbl_tips
+				inner join tbl_kategori on tbl_kategori.id_kategori = tbl_tips.id_kategori
+				group by tbl_tips.id_kategori
+				order by tbl_tips.id_tips desc";
         return $this->db->query($sql);
     }
 	
@@ -58,6 +73,13 @@ class M_tips extends CI_Model {
         $sql = "select * from tbl_tips
 				inner join tbl_kategori on tbl_kategori.id_kategori = tbl_tips.id_kategori
 				where tbl_tips.id_tips = '".$this->get_id_tips()."'";
+        return $this->db->query($sql);
+    }
+	
+	public function tampil_tips_by_id_kategori() {
+        $sql = "select * from tbl_tips
+				inner join tbl_kategori on tbl_kategori.id_kategori = tbl_tips.id_kategori
+				where tbl_tips.id_kategori = '".$this->get_id_kategori()."'";
         return $this->db->query($sql);
     }
 	

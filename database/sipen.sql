@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.0.2
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 16, 2016 at 06:10 AM
--- Server version: 10.0.17-MariaDB
--- PHP Version: 5.6.14
+-- Generation Time: 16 Des 2016 pada 11.49
+-- Versi Server: 10.1.16-MariaDB
+-- PHP Version: 5.6.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_admin`
+-- Struktur dari tabel `tbl_admin`
 --
 
 CREATE TABLE `tbl_admin` (
@@ -32,7 +32,7 @@ CREATE TABLE `tbl_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_admin`
+-- Dumping data untuk tabel `tbl_admin`
 --
 
 INSERT INTO `tbl_admin` (`username`, `password`) VALUES
@@ -42,7 +42,7 @@ INSERT INTO `tbl_admin` (`username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_berita`
+-- Struktur dari tabel `tbl_berita`
 --
 
 CREATE TABLE `tbl_berita` (
@@ -56,16 +56,19 @@ CREATE TABLE `tbl_berita` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_berita`
+-- Dumping data untuk tabel `tbl_berita`
 --
 
 INSERT INTO `tbl_berita` (`id_berita`, `id_kategori`, `judul`, `deskripsi`, `sumber`, `gambar`, `tgl_post`) VALUES
-(3, 1, 'TEST', 'TEST', 'TEST', 'gambar_3.jpg', '2016-12-16');
+(3, 1, 'TEST', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a erat eget erat imperdiet commodo. Nulla at maximus diam, et eleifend sapien. Etiam quam neque, consectetur ultrices nisi at, vestibulum mattis risus. Donec luctus venenatis elit. Donec auctor vel orci et sodales. Suspendisse potenti. Nam convallis, eros ac aliquet ultricies, orci orci convallis neque, at volutpat metus sem in tellus. Curabitur non leo consectetur, aliquam erat vel, tempor ex. In posuere sapien ac massa tincidunt, accumsan porta ipsum malesuada. Aliquam dignissim cursus dolor, ac ultricies quam viverra in. Pellentesque dapibus, quam eu finibus porta, dolor nisi aliquam tortor, nec semper nibh augue sit amet libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent eu fringilla massa. Nunc quis mauris suscipit, dignissim erat a, ullamcorper neque. ', 'TEST', 'gambar_3.jpg', '2016-12-16'),
+(6, 2, 'Test', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a erat eget erat imperdiet commodo. Nulla at maximus diam, et eleifend sapien. Etiam quam neque, consectetur ultrices nisi at, vestibulum mattis risus. Donec luctus venenatis elit. Donec auctor vel orci et sodales. Suspendisse potenti. Nam convallis, eros ac aliquet ultricies, orci orci convallis neque, at volutpat metus sem in tellus. Curabitur non leo consectetur, aliquam erat vel, tempor ex. In posuere sapien ac massa tincidunt, accumsan porta ipsum malesuada. Aliquam dignissim cursus dolor, ac ultricies quam viverra in. Pellentesque dapibus, quam eu finibus porta, dolor nisi aliquam tortor, nec semper nibh augue sit amet libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent eu fringilla massa. Nunc quis mauris suscipit, dignissim erat a, ullamcorper neque. ', '123', 'gambar_6.jpg', '2016-12-16'),
+(7, 1, '123', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a erat eget erat imperdiet commodo. Nulla at maximus diam, et eleifend sapien. Etiam quam neque, consectetur ultrices nisi at, vestibulum mattis risus. Donec luctus venenatis elit. Donec auctor vel orci et sodales. Suspendisse potenti. Nam convallis, eros ac aliquet ultricies, orci orci convallis neque, at volutpat metus sem in tellus. Curabitur non leo consectetur, aliquam erat vel, tempor ex. In posuere sapien ac massa tincidunt, accumsan porta ipsum malesuada. Aliquam dignissim cursus dolor, ac ultricies quam viverra in. Pellentesque dapibus, quam eu finibus porta, dolor nisi aliquam tortor, nec semper nibh augue sit amet libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent eu fringilla massa. Nunc quis mauris suscipit, dignissim erat a, ullamcorper neque. ', '123', 'gambar_7.jpg', '2016-12-16'),
+(8, 3, 'gempa', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a erat eget erat imperdiet commodo. Nulla at maximus diam, et eleifend sapien. Etiam quam neque, consectetur ultrices nisi at, vestibulum mattis risus. Donec luctus venenatis elit. Donec auctor vel orci et sodales. Suspendisse potenti. Nam convallis, eros ac aliquet ultricies, orci orci convallis neque, at volutpat metus sem in tellus. Curabitur non leo consectetur, aliquam erat vel, tempor ex. In posuere sapien ac massa tincidunt, accumsan porta ipsum malesuada. Aliquam dignissim cursus dolor, ac ultricies quam viverra in. Pellentesque dapibus, quam eu finibus porta, dolor nisi aliquam tortor, nec semper nibh augue sit amet libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent eu fringilla massa. Nunc quis mauris suscipit, dignissim erat a, ullamcorper neque. ', '123', 'gambar_8.jpg', '2016-12-16');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_forum`
+-- Struktur dari tabel `tbl_forum`
 --
 
 CREATE TABLE `tbl_forum` (
@@ -77,17 +80,17 @@ CREATE TABLE `tbl_forum` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_forum`
+-- Dumping data untuk tabel `tbl_forum`
 --
 
 INSERT INTO `tbl_forum` (`id_forum`, `id_kategori`, `judul`, `deskripsi`, `tgl_post`) VALUES
-(1, 2, 'BARU', 'BARU', '2016-12-16'),
-(3, 6, 'asd', 'asd', '2016-12-16');
+(1, 2, 'BARU', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a erat eget erat imperdiet commodo. Nulla at maximus diam, et eleifend sapien. Etiam quam neque, consectetur ultrices nisi at, vestibulum mattis risus. Donec luctus venenatis elit. Donec auctor vel orci et sodales. Suspendisse potenti. Nam convallis, eros ac aliquet ultricies, orci orci convallis neque, at volutpat metus sem in tellus. Curabitur non leo consectetur, aliquam erat vel, tempor ex. In posuere sapien ac massa tincidunt, accumsan porta ipsum malesuada. Aliquam dignissim cursus dolor, ac ultricies quam viverra in. Pellentesque dapibus, quam eu finibus porta, dolor nisi aliquam tortor, nec semper nibh augue sit amet libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent eu fringilla massa. Nunc quis mauris suscipit, dignissim erat a, ullamcorper neque. ', '2016-12-16'),
+(3, 6, 'asd', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a erat eget erat imperdiet commodo. Nulla at maximus diam, et eleifend sapien. Etiam quam neque, consectetur ultrices nisi at, vestibulum mattis risus. Donec luctus venenatis elit. Donec auctor vel orci et sodales. Suspendisse potenti. Nam convallis, eros ac aliquet ultricies, orci orci convallis neque, at volutpat metus sem in tellus. Curabitur non leo consectetur, aliquam erat vel, tempor ex. In posuere sapien ac massa tincidunt, accumsan porta ipsum malesuada. Aliquam dignissim cursus dolor, ac ultricies quam viverra in. Pellentesque dapibus, quam eu finibus porta, dolor nisi aliquam tortor, nec semper nibh augue sit amet libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent eu fringilla massa. Nunc quis mauris suscipit, dignissim erat a, ullamcorper neque. ', '2016-12-16');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_forum_komentar`
+-- Struktur dari tabel `tbl_forum_komentar`
 --
 
 CREATE TABLE `tbl_forum_komentar` (
@@ -99,7 +102,7 @@ CREATE TABLE `tbl_forum_komentar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_forum_komentar`
+-- Dumping data untuk tabel `tbl_forum_komentar`
 --
 
 INSERT INTO `tbl_forum_komentar` (`id_forum_komentar`, `id_forum`, `id_member`, `komentar`, `tgl_komentar`) VALUES
@@ -108,7 +111,7 @@ INSERT INTO `tbl_forum_komentar` (`id_forum_komentar`, `id_forum`, `id_member`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_kategori`
+-- Struktur dari tabel `tbl_kategori`
 --
 
 CREATE TABLE `tbl_kategori` (
@@ -117,7 +120,7 @@ CREATE TABLE `tbl_kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_kategori`
+-- Dumping data untuk tabel `tbl_kategori`
 --
 
 INSERT INTO `tbl_kategori` (`id_kategori`, `nama_kategori`) VALUES
@@ -131,7 +134,7 @@ INSERT INTO `tbl_kategori` (`id_kategori`, `nama_kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_member`
+-- Struktur dari tabel `tbl_member`
 --
 
 CREATE TABLE `tbl_member` (
@@ -146,16 +149,17 @@ CREATE TABLE `tbl_member` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_member`
+-- Dumping data untuk tabel `tbl_member`
 --
 
 INSERT INTO `tbl_member` (`id_member`, `nama`, `alamat`, `email`, `password`, `no_telp`, `jenis_kelamin`, `tgl_lahir`) VALUES
-(1, 'Luki Rahayu', 'Jl. Jeruk No 11, Bogor', 'luki@mail.com', 'pengguna', '087888283821', '0', '1995-02-25');
+(1, 'Luki Rahayu', 'Jl. Jeruk No 11, Bogor', 'luki@mail.com', 'pengguna', '087888283821', '0', '1995-02-25'),
+(5, 'Teguh', 'Jl. Mawar no 11 bogor', 'teguh@mail.com', '123', '08786625341', '1', '2012-09-25');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_peta`
+-- Struktur dari tabel `tbl_peta`
 --
 
 CREATE TABLE `tbl_peta` (
@@ -168,16 +172,16 @@ CREATE TABLE `tbl_peta` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_peta`
+-- Dumping data untuk tabel `tbl_peta`
 --
 
 INSERT INTO `tbl_peta` (`id_peta`, `id_kategori`, `judul`, `deskripsi`, `sumber`, `gambar`) VALUES
-(2, 4, 'Test', 'Test', 'Test', 'gambar_2.jpg');
+(2, 4, 'Test', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a erat eget erat imperdiet commodo. Nulla at maximus diam, et eleifend sapien. Etiam quam neque, consectetur ultrices nisi at, vestibulum mattis risus. Donec luctus venenatis elit. Donec auctor vel orci et sodales. Suspendisse potenti. Nam convallis, eros ac aliquet ultricies, orci orci convallis neque, at volutpat metus sem in tellus. Curabitur non leo consectetur, aliquam erat vel, tempor ex. In posuere sapien ac massa tincidunt, accumsan porta ipsum malesuada. Aliquam dignissim cursus dolor, ac ultricies quam viverra in. Pellentesque dapibus, quam eu finibus porta, dolor nisi aliquam tortor, nec semper nibh augue sit amet libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent eu fringilla massa. Nunc quis mauris suscipit, dignissim erat a, ullamcorper neque. ', 'Test', 'gambar_2.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_relawan`
+-- Struktur dari tabel `tbl_relawan`
 --
 
 CREATE TABLE `tbl_relawan` (
@@ -193,7 +197,7 @@ CREATE TABLE `tbl_relawan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_relawan`
+-- Dumping data untuk tabel `tbl_relawan`
 --
 
 INSERT INTO `tbl_relawan` (`id_relawan`, `nama`, `alamat`, `email`, `no_telp`, `jenis_kelamin`, `tempat_lahir`, `tgl_lahir`, `kota`) VALUES
@@ -202,7 +206,7 @@ INSERT INTO `tbl_relawan` (`id_relawan`, `nama`, `alamat`, `email`, `no_telp`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_tips`
+-- Struktur dari tabel `tbl_tips`
 --
 
 CREATE TABLE `tbl_tips` (
@@ -216,11 +220,11 @@ CREATE TABLE `tbl_tips` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_tips`
+-- Dumping data untuk tabel `tbl_tips`
 --
 
 INSERT INTO `tbl_tips` (`id_tips`, `id_kategori`, `judul`, `deskripsi`, `sumber`, `gambar`, `tgl_post`) VALUES
-(1, 4, '123', '123', '123', 'gambar_1.jpg', '2016-12-16');
+(1, 4, '123', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a erat eget erat imperdiet commodo. Nulla at maximus diam, et eleifend sapien. Etiam quam neque, consectetur ultrices nisi at, vestibulum mattis risus. Donec luctus venenatis elit. Donec auctor vel orci et sodales. Suspendisse potenti. Nam convallis, eros ac aliquet ultricies, orci orci convallis neque, at volutpat metus sem in tellus. Curabitur non leo consectetur, aliquam erat vel, tempor ex. In posuere sapien ac massa tincidunt, accumsan porta ipsum malesuada. Aliquam dignissim cursus dolor, ac ultricies quam viverra in. Pellentesque dapibus, quam eu finibus porta, dolor nisi aliquam tortor, nec semper nibh augue sit amet libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent eu fringilla massa. Nunc quis mauris suscipit, dignissim erat a, ullamcorper neque. ', '123', 'gambar_1.jpg', '2016-12-16');
 
 --
 -- Indexes for dumped tables
@@ -295,7 +299,7 @@ ALTER TABLE `tbl_tips`
 -- AUTO_INCREMENT for table `tbl_berita`
 --
 ALTER TABLE `tbl_berita`
-  MODIFY `id_berita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_berita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `tbl_forum`
 --
@@ -305,7 +309,7 @@ ALTER TABLE `tbl_forum`
 -- AUTO_INCREMENT for table `tbl_forum_komentar`
 --
 ALTER TABLE `tbl_forum_komentar`
-  MODIFY `id_forum_komentar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_forum_komentar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `tbl_kategori`
 --
@@ -315,7 +319,7 @@ ALTER TABLE `tbl_kategori`
 -- AUTO_INCREMENT for table `tbl_member`
 --
 ALTER TABLE `tbl_member`
-  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `tbl_peta`
 --

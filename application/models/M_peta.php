@@ -49,6 +49,21 @@ class M_peta extends CI_Model {
         return $this->db->query($sql);
     }
 	
+	public function tampil_peta_group_by_id_kategori() {
+        $sql = "select * from tbl_peta
+				inner join tbl_kategori on tbl_kategori.id_kategori = tbl_peta.id_kategori
+				group by tbl_peta.id_kategori
+				order by tbl_peta.id_peta desc";
+        return $this->db->query($sql);
+    }
+	
+	public function tampil_peta_by_id_kategori() {
+        $sql = "select * from tbl_peta
+				inner join tbl_kategori on tbl_kategori.id_kategori = tbl_peta.id_kategori
+				where tbl_peta.id_kategori = '".$this->get_id_kategori()."'";
+        return $this->db->query($sql);
+    }
+	
 	public function tampil_peta_by_id_peta() {
         $sql = "select * from tbl_peta
 				inner join tbl_kategori on tbl_kategori.id_kategori = tbl_peta.id_kategori

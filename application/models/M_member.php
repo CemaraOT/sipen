@@ -67,7 +67,7 @@ class M_member extends CI_Model {
 	public function tambah_member() {
         $sql = "insert into tbl_member (nama,alamat,email,no_telp,jenis_kelamin,tgl_lahir,password)
 					values
-					('".$this->get_nama()."','".$this->get_email()."','".$this->get_alamat()."','".$this->get_no_telp()."','".$this->get_jenis_kelamin()."','".$this->get_tgl_lahir()."','".$this->get_password()."')";
+					('".$this->get_nama()."','".$this->get_alamat()."','".$this->get_email()."','".$this->get_no_telp()."','".$this->get_jenis_kelamin()."','".$this->get_tgl_lahir()."','".$this->get_password()."')";
         return $this->db->query($sql);
     }
 	
@@ -77,6 +77,7 @@ class M_member extends CI_Model {
 				alamat = '".$this->get_alamat()."',
 				no_telp = '".$this->get_no_telp()."',
 				jenis_kelamin = '".$this->get_jenis_kelamin()."',
+				password = '".$this->get_password()."',
 				tgl_lahir = '".$this->get_tgl_lahir()."'
 				where
 				id_member = '".$this->get_id_member()."'";

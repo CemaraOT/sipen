@@ -52,3 +52,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'beranda';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['berita/:any'] = 'berita';
+$route['berita/:any/:any'] = 'detail_berita';
+$route['tips/:any'] = 'tips';
+$route['tips/:any/:any'] = 'detail_tips';
+$route['peta/:any'] = 'peta';
+$route['peta/:any/:any'] = 'detail_peta';
+$route['forum/:any'] = 'forum';
+$route['forum/:any/:any'] = 'detail_forum';

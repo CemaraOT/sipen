@@ -39,6 +39,21 @@ class M_forum extends CI_Model {
         return $this->db->query($sql);
     }
 	
+	public function tampil_forum_group_by_id_kategori() {
+        $sql = "select * from tbl_forum
+				inner join tbl_kategori on tbl_kategori.id_kategori = tbl_forum.id_kategori
+				group by tbl_forum.id_kategori
+				order by tbl_forum.id_forum desc";
+        return $this->db->query($sql);
+    }
+	
+	public function tampil_forum_by_id_kategori() {
+        $sql = "select * from tbl_forum
+				inner join tbl_kategori on tbl_kategori.id_kategori = tbl_forum.id_kategori
+				where tbl_forum.id_kategori = '".$this->get_id_kategori()."'";
+        return $this->db->query($sql);
+    }
+	
 	public function tampil_forum_desc_limit_1() {
         $sql = "select * from tbl_forum order by id_forum desc limit 1";
         return $this->db->query($sql);

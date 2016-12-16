@@ -95,6 +95,34 @@ class Admin_forum extends CI_Controller {
 		redirect(site_url().'admin_forum');
 	}
 	
+	public function tambah_forum_komentar()
+	{
+		$id_forum = $this->input->post('id_forum');
+		$id_kategori = $this->input->post('id_kategori');
+		$this->m_forum_komentar->set_id_forum($this->input->post('id_forum'));
+		$this->m_forum_komentar->set_id_member($this->session->userdata('id_member'));
+		$this->m_forum_komentar->set_komentar($this->input->post('komentar'));
+		$this->m_forum_komentar->set_tgl_komentar(date('Y-m-d'));
+		$this->m_forum_komentar->tambah_forum_komentar();
+		
+		$this->session->set_flashdata('success', 'Komentar berhasil ditambah.');
+		redirect(site_url().'forum/'.$id_kategori.'/'.$id_forum);
+	}
+	
+	public function hapus_forum_komentar_front()
+	{
+		$this->m_forum_komentar->set_id_forum_komentar($this->uri->segment(3));
+		$query = $this->m_forum_komentar->tampil_forum_komentar_by_id_forum_komentar();
+		if($query->num_rows()){
+			$row = $query->row();
+			$id_forum = $row->id_forum;
+			$id_kategori = $row->id_kategori;
+		}
+		$this->m_forum_komentar->hapus_forum_komentar();
+		$this->session->set_flashdata('success', 'Komentar berhasil dihapus.');
+		redirect(site_url().'forum/'.$id_kategori.'/'.$id_forum);
+	}
+	
 	public function hapus_forum_komentar()
 	{
 		$this->m_forum_komentar->set_id_forum_komentar($this->uri->segment(3));
