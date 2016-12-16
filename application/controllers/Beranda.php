@@ -9,6 +9,7 @@ class Beranda extends CI_Controller {
 		$this->load->model('m_tips');
 		$this->load->model('m_peta');
 		$this->load->model('m_forum');
+		$this->load->model('m_kategori');
     }
 	
 	public function index()

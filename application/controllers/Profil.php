@@ -10,6 +10,7 @@ class Profil extends CI_Controller {
 		$this->load->model('m_peta');
 		$this->load->model('m_member');
 		$this->load->model('m_forum');
+		$this->load->model('m_kategori');
     }
 	
 	public function index()

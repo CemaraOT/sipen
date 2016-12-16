@@ -3,9 +3,14 @@
 				<div class="col-md-3">
 					<p class="lead">Berita</p>
 					<div class="list-group">
-						<a href="#" class="list-group-item">Category 1</a>
-						<a href="#" class="list-group-item">Category 2</a>
-						<a href="#" class="list-group-item">Category 3</a>
+						<?php
+							$query = $this->m_kategori->tampil_kategori();
+							foreach($query->result() as $row){
+						?>
+						<a href="#" class="list-group-item"><?php echo ucfirst($row->nama_kategori); ?></a>
+						<?php
+							}
+						?>
 					</div>
 				</div>
 				<div class="col-md-9" style="border-left:1px solid #f3f3f3;">
@@ -27,9 +32,9 @@
 							$query = $this->m_berita->tampil_berita_by_id_kategori();
 							foreach($query->result() as $row){
 						?>
-						<div class="col-md-4">
+						<div class="col-md-6">
 							<div class="thumbnail">
-								<h4 style="padding:5px 0px 0px 10px;">
+								<h4 style="padding:5px 0px 0px 10px; min-height:80px;">
 									<a href="<?php echo site_url(); ?>berita/<?php echo $row->id_kategori; ?>/<?php echo $row->id_berita; ?>"><?php echo $row->judul; ?></a>
 								</h4>
 								<img width="100%"src="<?php echo base_url(); ?>assets/img/berita/<?php echo $row->gambar; ?>" alt="">		

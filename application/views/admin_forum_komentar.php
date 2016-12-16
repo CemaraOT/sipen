@@ -27,9 +27,9 @@
 											<th style="text-align:left;"><?php echo $row->judul; ?></th>
 										</tr>
 										<tr>
-											<th>Deskripsi</th>
-											<th>:</th>
-											<th><?php echo $row->deskripsi; ?></th>
+											<td valign="top">Deskripsi</td>
+											<td valign="top">:</td>
+											<td><p align="justify" class="well"><?php echo $row->deskripsi; ?></p></td>
 										</tr>
 										<?php
 											}

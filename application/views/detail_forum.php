@@ -3,9 +3,14 @@
 				<div class="col-md-3">
 					<p class="lead">Detail Forum</p>
 					<div class="list-group">
-						<a href="#" class="list-group-item">Category 1</a>
-						<a href="#" class="list-group-item">Category 2</a>
-						<a href="#" class="list-group-item">Category 3</a>
+						<?php
+							$query = $this->m_kategori->tampil_kategori();
+							foreach($query->result() as $row){
+						?>
+						<a href="#" class="list-group-item"><?php echo ucfirst($row->nama_kategori); ?></a>
+						<?php
+							}
+						?>
 					</div>
 				</div>
 				<div class="col-md-9" style="border-left:1px solid #f3f3f3;">

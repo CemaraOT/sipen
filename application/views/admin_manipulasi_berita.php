@@ -59,7 +59,7 @@
 									<?php } ?>
 									<?php } ?>
 									<div class="panel panel-default" style="padding:0% 2%; margin-top:2%; color:grey; font-size:9pt; font-weight:bold;">
-										<text>* ukuran gambar harus 1000 x 650 pixel.</text><br/>
+										<text>* ukuran gambar harus 650 x 360 pixel.</text><br/>
 										<text>* format .jpg atau .png</text>
 									</div>
 									<input type="file" name="gambar" class="form-control" />
