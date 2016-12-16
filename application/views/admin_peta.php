@@ -23,23 +23,30 @@
 										</tr>
 									</thead>
 									<tbody>
+										<?php
+											$query = $this->m_peta->tampil_peta();
+											foreach($query->result() as $row){
+										?>
 										<tr>
-											<td>1</td>
-											<td>Banjir</td>
-											<td>Bogor</td>
+											<td><?php echo $row->id_peta; ?></td>
+											<td><?php echo $row->nama_kategori; ?></td>
+											<td><?php echo $row->sumber; ?></td>
 											<td>
 												<div class="text-center">
 													<button type="button" class="btn btn-info btn-rounded" style="width:40px; height:40px;"
-														onclick="window.location.href='<?php echo site_url(); ?>admin_peta/ubah/'">
+														onclick="window.location.href='<?php echo site_url(); ?>admin_peta/ubah/<?php echo $row->id_peta; ?>'">
 														<i class="fa fa-edit" style="font-size:12pt;"></i>
 													</button>
 													<button type="button" class="btn btn-danger btn-rounded hapus" style="width:40px; height:40px;"
-														title="Hapus" data-toggle="modal" data-target="#modal_konfirmasi" id="hapus_">
+														title="Hapus" data-toggle="modal" data-target="#modal_konfirmasi" id="hapus_<?php echo $row->id_peta; ?>">
 														<i class="fa fa-trash" style="font-size:12pt;"></i>
 													</button>
 												</div>
 											</td>
 										</tr>
+										<?php
+											}
+										?>
 									</tbody>
 								</table>
 							</div>
@@ -84,7 +91,7 @@
         });
 		
 		$('#hapus').click(function() {
-			window.location = '<?php echo site_url();?>admin_peta/hapus/' + $('#id_peta').val();
+			window.location = '<?php echo site_url();?>admin_peta/hapus_peta/' + $('#id_peta').val();
 		});
 		
 		$('#table').DataTable();

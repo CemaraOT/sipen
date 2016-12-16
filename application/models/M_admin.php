@@ -10,7 +10,6 @@ class M_admin extends CI_Model {
 	public function set_password($value) {
         $this->password = $value; }
 
-
     //getter
 	public function get_username() {
         return $this->username; }

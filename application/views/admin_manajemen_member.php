@@ -6,7 +6,7 @@
 								<h3>Manajemen Member</h3>
 							</div>
 							<div class="pull-right" style="padding-top:20px;">
-								<a href="<?php echo site_url(); ?>admin_menajemen/member/tambah'"><i class="fa fa-plus"></i> Tambah</a>
+								
 							</div>
 							<div class="clearfix"></div>
 						</div>
@@ -23,23 +23,30 @@
 										</tr>
 									</thead>
 									<tbody>
+										<?php
+											$query = $this->m_member->tampil_member();
+											foreach($query->result() as $row){
+										?>
 										<tr>
-											<td>1</td>
-											<td>Supardi</td>
-											<td>085788929293</td>
+											<td><?php echo $row->id_member; ?></td>
+											<td><?php echo $row->nama; ?></td>
+											<td><?php echo $row->no_telp; ?></td>
 											<td>
 												<div class="text-center">
 													<button type="button" class="btn btn-info btn-rounded" style="width:40px; height:40px;"
-														onclick="window.location.href='<?php echo site_url(); ?>admin_menajemen/member/ubah'">
+														onclick="window.location.href='<?php echo site_url(); ?>admin_manajemen/member/ubah/<?php echo $row->id_member; ?>'">
 														<i class="fa fa-edit" style="font-size:12pt;"></i>
 													</button>
 													<button type="button" class="btn btn-danger btn-rounded hapus" style="width:40px; height:40px;"
-														title="Hapus" data-toggle="modal" data-target="#modal_konfirmasi" id="hapus_">
+														title="Hapus" data-toggle="modal" data-target="#modal_konfirmasi" id="hapus_<?php echo $row->id_member; ?>">
 														<i class="fa fa-trash" style="font-size:12pt;"></i>
 													</button>
 												</div>
 											</td>
 										</tr>
+										<?php
+											}
+										?>
 									</tbody>
 								</table>
 							</div>
@@ -84,7 +91,7 @@
         });
 		
 		$('#hapus').click(function() {
-			window.location = '<?php echo site_url();?>admin_manajemen/member/hapus/' + $('#id_member').val();
+			window.location = '<?php echo site_url();?>admin_manajemen/hapus_member/' + $('#id_member').val();
 		});
 		
 		$('#table').DataTable();

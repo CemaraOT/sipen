@@ -6,7 +6,7 @@
 								<h3>Manajemen Relawan</h3>
 							</div>
 							<div class="pull-right" style="padding-top:20px;">
-								<a href="<?php echo site_url(); ?>admin_menajemen/relawan/tambah'"><i class="fa fa-plus"></i> Tambah</a>
+								
 							</div>
 							<div class="clearfix"></div>
 						</div>
@@ -23,23 +23,30 @@
 										</tr>
 									</thead>
 									<tbody>
+										<?php
+											$query = $this->m_relawan->tampil_relawan();
+											foreach($query->result() as $row){
+										?>
 										<tr>
-											<td>1</td>
-											<td>Randi</td>
-											<td>087785774845</td>
+											<td><?php echo $row->id_relawan; ?></td>
+											<td><?php echo $row->nama; ?></td>
+											<td><?php echo $row->no_telp; ?></td>
 											<td>
 												<div class="text-center">
 													<button type="button" class="btn btn-info btn-rounded" style="width:40px; height:40px;"
-														onclick="window.location.href='<?php echo site_url(); ?>admin_menajemen/relawan/ubah'">
+														onclick="window.location.href='<?php echo site_url(); ?>admin_manajemen/relawan/ubah/<?php echo $row->id_relawan; ?>'">
 														<i class="fa fa-edit" style="font-size:12pt;"></i>
 													</button>
 													<button type="button" class="btn btn-danger btn-rounded hapus" style="width:40px; height:40px;"
-														title="Hapus" data-toggle="modal" data-target="#modal_konfirmasi" id="hapus_">
+														title="Hapus" data-toggle="modal" data-target="#modal_konfirmasi" id="hapus_<?php echo $row->id_relawan; ?>">
 														<i class="fa fa-trash" style="font-size:12pt;"></i>
 													</button>
 												</div>
 											</td>
 										</tr>
+										<?php
+											}
+										?>
 									</tbody>
 								</table>
 							</div>
@@ -84,10 +91,11 @@
         });
 		
 		$('#hapus').click(function() {
-			window.location = '<?php echo site_url();?>admin_manajemen/relawan/hapus/' + $('#id_relawan').val();
+			window.location = '<?php echo site_url();?>admin_manajemen/hapus_relawan/' + $('#id_relawan').val();
 		});
 		
 		$('#table').DataTable();
+		
 		<?php if($this->session->flashdata('success')){ ?>
 			alert('<?php echo $this->session->flashdata('success'); ?>');
 		<?php } ?>

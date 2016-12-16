@@ -6,7 +6,7 @@
 								<h3>Manajemen Admin</h3>
 							</div>
 							<div class="pull-right" style="padding-top:20px;">
-								<a href="<?php echo site_url(); ?>admin_menajemen/admin/tambah'"><i class="fa fa-plus"></i> Tambah</a>
+								<a href="<?php echo site_url(); ?>admin_manajemen/admin/tambah"><i class="fa fa-plus"></i> Tambah</a>
 							</div>
 							<div class="clearfix"></div>
 						</div>
@@ -22,22 +22,29 @@
 										</tr>
 									</thead>
 									<tbody>
+										<?php
+											$query = $this->m_admin->tampil_admin();
+											foreach($query->result() as $row){
+										?>
 										<tr>
-											<td>admin</td>
-											<td>********</td>
+											<td><?php echo $row->username; ?></td>
+											<td><?php echo str_replace($row->password, '*********', $row->password); ?></td>
 											<td>
 												<div class="text-center">
 													<button type="button" class="btn btn-info btn-rounded" style="width:40px; height:40px;"
-														onclick="window.location.href='<?php echo site_url(); ?>admin_menajemen/admin/ubah'">
+														onclick="window.location.href='<?php echo site_url(); ?>admin_manajemen/admin/ubah/<?php echo $row->username; ?>'">
 														<i class="fa fa-edit" style="font-size:12pt;"></i>
 													</button>
-													<button type="button" class="btn btn-danger btn-rounded hapus" style="width:40px; height:40px;"
-														title="Hapus" data-toggle="modal" data-target="#modal_konfirmasi" id="hapus_">
+													<button type="button" class="btn btn-danger btn-rounded hapus" style="width:40px; height:40px;" <?php if($row->username == $this->session->userdata('username')) { echo 'disabled'; } ?>
+														title="Hapus" data-toggle="modal" data-target="#modal_konfirmasi" id="hapus_<?php echo $row->username; ?>">
 														<i class="fa fa-trash" style="font-size:12pt;"></i>
 													</button>
 												</div>
 											</td>
 										</tr>
+										<?php
+											}
+										?>
 									</tbody>
 								</table>
 							</div>
@@ -82,7 +89,7 @@
         });
 		
 		$('#hapus').click(function() {
-			window.location = '<?php echo site_url();?>admin_manajemen/admin/hapus/' + $('#username').val();
+			window.location = '<?php echo site_url();?>admin_manajemen/admin/hapus_admin/' + $('#username').val();
 		});
 		
 		$('#table').DataTable();
